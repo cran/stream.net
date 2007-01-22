@@ -1,0 +1,108 @@
+Release Notes
+
+Changes
+
+Version 1.0.5, 22 January 2007
+
+* many changes to prepare for submission to CRAN
+
+* created full documentation in .Rd format
+
+* net.arcinput has additional argument "lineformat" to indicate 
+  whether lines are in S/R format or Arc generate format; also 
+  now will take R objects as AAT and lines input rather than 
+  files
+
+* added read.arcgenlin() to convert Arc generate format to 
+  S/R format
+
+* reference added for autocorrelation algorithm
+
+* net.autocorr.onelag now returns list with autocorrelation 
+  coefficient and number of pairs used to compute it
+
+* net.group changed to eliminate "x" argument; redundant 
+  with "segatt"
+
+Version 1.0.4, 16 November 2006
+
+* function net.interp added as inverse distance interpolation 
+  mechanism for sparse data on the network
+
+* net.addatt, net.autocorr.att, net.interp now add sid's as 
+  names when returning vector
+
+Version 1.0.3, 4 May 2006
+
+* net.morans.i changed in name only to net.autocorr.onelag in 
+  order to protect the guilty who misnamed it (Moran's I is a 
+  slightly different statistic)
+
+Version 1.0.2, 28 March 2006
+
+* net.dist changed to eliminate confusing negative distances; 
+  now up is row to column, down is column to row; very simple
+
+* net.total.dist, net.dir, net.prox changed to use new distance 
+  matrix
+
+* net.dist changed to put net$segs$sid as row and column names of 
+  output matrix
+
+* net.group changed to delete NAs in quantile or equalInterval
+  (NA is returned as value of group for those segments)
+
+* net.map changed to draw segment with NA value as lwd=1, col="black"
+
+Version 1.0.1, 15 March 2006
+
+* net.lengths and net.shortlengths fixed to properly access coordinates 
+  in subfunction getlength when segs$sid are not dense (1:n).
+
+* net.map changed to use greater of net line coordinate bounds and 
+  outline coordinate bounds to allow net to extend beyond outline.
+  Also added lwd capability when just drawing net without classes.
+
+* net.write and net.read added to allow writing and then reading 
+  back in a network in R tables format.  Large networks in arc/info 
+  format will input faster using this facility (once they have been 
+  read in using net.arcinput and saved with net.write).
+
+Version 1.0.0, 3 March 2006
+
+* net.lengths returns vector of lengths instead of adding to net$segs,
+  however net.qmodel, net.arcinput, and net.addsegs put their 
+  lengths in net$segs, so result is same.
+
+* net.addsegs modified to include dist argument and option "Gamma" 
+  in addition to "Uniform".  Bug for min=0 fixed.  Changes by Leibo.
+
+* net.dist totally rewritten to create upstream/downstream distance 
+  matrix.
+
+* net.total.dist is new function to produce symmetric total distance 
+  matrix disregarding upstream/downstream.
+
+* net.dir is new function to produce direction matrix corresponding 
+  to, and to be used with, net.total.dist.
+
+* net.prox rewritten to use new distance matrix and return up or 
+  down or both neighborhoods on coordinates or segments.
+
+* net.maxupslope is new function to create segment by segment matrix 
+  containing maximum upstream slope between two segments.
+
+* net.correlogram is new function to calculate network correlogram 
+  for a segment attribute.
+
+* net.morans.i is new function to calculate Moran's I coefficient 
+  for a segment attribute.
+
+* net.autocorr.att is new function to create new attribute with 
+  at least a specified level of network spatial autocorrelation.
+
+* net.map improved to handle colors better and to plot text of 
+  segment attribute sent as vector as well as field in net$segs.
+
+* net.map.key is new function to draw legends for net.map.
+
