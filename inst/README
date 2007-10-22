@@ -2,6 +2,11 @@ Release Notes
 
 Changes
 
+Version 1.0.6, 22 October 2007
+
+* changed License to "Unlimited" in DESCRIPTION in response 
+  to request from CRAN
+
 Version 1.0.5, 22 January 2007
 
 * many changes to prepare for submission to CRAN

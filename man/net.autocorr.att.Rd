@@ -42,7 +42,7 @@
 \value{
  If \code{vector} is TRUE, then a vector of the attribute
  values in segment order, else a \code{\link{net.object}}
- with the attribute added to \code{$segs}.}
+ with the attribute added to \code{$segs}.
 }
 \references{
  Henley S.  1975.  Autocorrelation coefficients from
